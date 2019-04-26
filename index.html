@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/csss/style.css" />
     <script src="assets/javascript/app.js"></script>
     <title>NYSearch</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">New York Times Search</h1>
-      </div>
+        <div class="container">
+            <h1 class="display-4">New York Times Search</h1>
+        </div>
     </div>
     <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="searchID">Search Term:</label>
-          <input type="text" class="form-control" id="searchID" />
-        </div>
-        <div class="form-group">
-          <label for="numRecord">Number of Record to Retrieve</label>
-          <select class="form-control" id="numRecord">
-            <option>1</option>
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
-            <option>20</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="startYearID">Start Year (Optional):</label>
-          <input type="number" class="form-control" id="startYearID" />
-        </div>
-        <div class="form-group">
-          <label for="endYearID">End Year (Optional):</label>
-          <input type="number" class="form-control" id="endYearID" />
-        </div>
-        <button type="submit" class="btn btn-primary" id ="submitSearch">Search</button>
-        <button type="reset" class="btn btn-danger">Clear Results</button>
-      </form>
+        <form>
+            <div class="form-group">
+                <label for="searchID">Search Term:</label>
+                <input type="text" class="form-control" id="searchID" required />
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="numRecord">Number of Record to Retrieve</label>
+                <select class="form-control" id="numRecord">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="startYearID">Start Year (Optional):</label>
+                <input type="number" class="form-control" id="startYearID" />
+            </div>
+            <div class="form-group">
+                <label for="endYearID">End Year (Optional):</label>
+                <input type="number" class="form-control" id="endYearID" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitSearch">Search</button>
+            <button type="reset" class="btn btn-danger">Clear Results</button>
+        </form>
 
-      <div> 
-        <h1>Top Articles</h1>
-        <div id="searchResult">
-            
+        <div>
+            <h1>Top Articles</h1>
+            <div id="searchResult">
+
+            </div>
         </div>
-      </div>
     </div>
-    
-  </body>
+
+</body>
+
 </html>
