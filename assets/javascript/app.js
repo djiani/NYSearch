@@ -6,6 +6,7 @@ function getNews(title, link, imgURL) {
         <a href=${link}>link </a>
     </div>`;
 }
+const baseUrl = "https://api.nytimes.com/svc/search/v2/";
 
 $(document).ready(function() {
   $("#submitSearch").click(function(event) {
@@ -22,9 +23,30 @@ $(document).ready(function() {
     console.log(startingYear);
 
     let endYear = $("#endYearID").val();
-    console.log(endYear);
-    $("#searchResult").append(getNews("news1", "link", "url1"));
-    $("#searchResult").append(getNews("news2", "link", "url3"));
+    console.log(endYear); 
+    //ajax code function here:
+    $.ajax({
+      url:`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=9GJooULQWNQ78BGGiBYrgraZtLeqaEP9`,
+      method: "GET"
+
+    }).then(function(response){
+      const articles = response.response.docs.map(function(newArt){
+        return getNews(newArt.snippet, "", "");
+      })
+
+      $("#searchResult").append(articles);
+
+    }).catch(function(err){
+      console.log("error");
+    })
+
+
+
+
+
+
+    // $("#searchResult").append(getNews("news1", "link", "url1"));
+    // $("#searchResult").append(getNews("news2", "link", "url3"));
 
   });
 
