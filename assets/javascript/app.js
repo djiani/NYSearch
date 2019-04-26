@@ -33,11 +33,11 @@ $(document).ready(function() {
                 console.log(endYear);
                 querystring += `&q=${searchTerm}&page=${numberRecords}`;
                 if (startingYear) {
-                    querystring += "begin_date=&" + startingYear + "0101";
+                    querystring += "&begin_date=" + startingYear + "0101";
 
                 }
                 if (endYear) {
-                    querystring += "end_date=&" + endYear + "0101";
+                    querystring += "&end_date=" + endYear + "0101";
 
                 }
                 //ajax code function here:
@@ -61,11 +61,6 @@ $(document).ready(function() {
                 }).catch(function (err) {
                     console.log("error");
                 })
-
-
-
-
-
 
                 // $("#searchResult").append(getNews("news1", "link", "url1"));
                 // $("#searchResult").append(getNews("news2", "link", "url3"));
